@@ -1,19 +1,72 @@
 #grid {
-  width: 90vw;
-  height: 90vh;
-  border: 1px solid;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  /* display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  justify-content: center;
+  margin: 10px;
+}
+
+.card-container {
+  position: relative;
 }
 
 .card {
-  border: 1px solid pink;
   height: 175px;
   width: 175px;
-  margin: 0;
+  margin: 5px;
+  background-size: contain;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  background-image: linear-gradient(to bottom, lightcyan, pink, plum);
+  transition: transform 2s;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.card-1, .card-9 {
+  background-image: url('img/without_fear.jpg');
+}
+
+.card-2, .card-10 {
+  background-image: url('img/wiped_out.jpg');
+}
+
+.card-3, .card-11 {
+  background-image: url('img/too_weird_to_live_too_rare_to_die.jpg');
+}
+
+.card-4, .card-12 {
+  background-image: url('img/singles.jpg');
+}
+
+.card-5, .card-13 {
+  background-image: url('img/pretty_odd.jpg');
+}
+
+.card-6, .card-14 {
+  background-image: url('img/blink_182.jpg');
+}
+
+.card-7, .card-15 {
+  background-image: url('img/pray_for_the_wicked.jpg');
+}
+
+.card-8, .card-16 {
+  background-image: url('img/american_beauty_american_psycho.png');
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
