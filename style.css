@@ -1,0 +1,19 @@
+#grid {
+  width: 90vw;
+  height: 90vh;
+  border: 1px solid;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+}
+
+.card {
+  border: 1px solid pink;
+  height: 175px;
+  width: 175px;
+  margin: 0;
+}
