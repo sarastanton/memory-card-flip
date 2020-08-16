@@ -8,30 +8,39 @@
 
 .card-container {
   position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
 .card {
   height: 175px;
   width: 175px;
-  margin: 5px;
+  margin: 8px;
   background-size: contain;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 19px 35px 9px rgba(199,199,199,1);
+  -moz-box-shadow: 5px 19px 35px 9px rgba(199,199,199,1);
+  box-shadow: 5px 19px 35px 9px rgba(199,199,199,1);
+  /* transition: transform 1s;
+  transform-style: preserve-3d; */
 }
 
-.card.is-flipped {
+.card-container.is-flipped {
   transform: rotateY(180deg);
 }
 
-.card-back {
+.front {
   background-image: linear-gradient(to bottom, lightcyan, pink, plum);
-  transition: transform 2s;
-  transform-style: preserve-3d;
+  border: 1px solid black;
+  /* transition: transform 2s;
+  transform-style: preserve-3d; */
   position: absolute;
   top: 0;
   z-index: 1;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .card-1, .card-9 {
@@ -43,7 +52,7 @@
 }
 
 .card-3, .card-11 {
-  background-image: url('img/too_weird_to_live_too_rare_to_die.jpg');
+  background-image: url('img/v.png');
 }
 
 .card-4, .card-12 {
