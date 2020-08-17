@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cards.forEach((card) => {
     card.addEventListener('click', (event) => {
+      if (selectedCards.length >= 2) {
+        return;
+      }
       card.classList.toggle('is-flipped');
       selectedCards.push(card);
       checkForMatch();
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const checkForMatch = () => {
-    if (selectedCards.length < 2) {
+    if (selectedCards.length !== 2) {
       return;
     }
     const id1 = parseInt(selectedCards[0].children[1].dataset.id) - 1;
@@ -67,18 +70,18 @@ document.addEventListener('DOMContentLoaded', () => {
     score+= 10;
     setTimeout(() => {
       selectedCards.forEach((card) => card.remove());
-      scoreField.innerText = score;
       selectedCards = [];
+      scoreField.innerText = score;
     }, 1500);
   };
 
   const handleNonMatch = () => {
     setTimeout(() => {
+      selectedCards = [];
       document.querySelectorAll('.is-flipped').forEach((card) => {
         card.classList.remove("is-flipped");
       })
     }, 1500);
-    selectedCards = [];
   };
 
 
