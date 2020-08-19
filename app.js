@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleMatch = () => {
     score+= 10;
     setTimeout(() => {
-      selectedCards.forEach((card) => card.remove());
+      selectedCards.forEach((card) => card.style.visibility = "hidden");
       selectedCards = [];
       scoreField.innerText = score;
     }, 1500);
