@@ -26,6 +26,7 @@
   border-radius: 15px;
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .card-container.is-flipped {
