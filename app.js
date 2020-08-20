@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   radios.forEach((radio) => {
-    radio.addEventListener('change', (event) => {
+    radio.addEventListener('click', (event) => {
       setCardTheme(event.target.value);
     })
   })
