@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = 0;
   const scoreField = document.querySelector('#score');
   const cards = document.querySelectorAll('.card-container');
+  const radios = document.getElementsByName('theme');
   const covers = [
     "american_beauty_american_psycho.png", "american_beauty_american_psycho.png", "blink_182.jpg",
     "blink_182.jpg",
@@ -32,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
+  radios.forEach((radio) => {
+    radio.addEventListener('change', (event) => {
+      setCardTheme(event.target.value);
+    })
+  })
+
   const shuffleCards = (array) => {
     let counter = array.length;
     while (counter > 0) {
@@ -49,9 +56,25 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach((card) => {
       const cardBack = card.children[1];
       idx = parseInt(cardBack.dataset.id) - 1;
-      cardBack.style.backgroundImage = `url(img/${shuffledCards[idx]})`;
+      cardBack.style.backgroundImage = `url(img/album-covers/${shuffledCards[idx]})`;
     });
   };
+
+  const setCardTheme = (theme) => {
+    if (theme === "mermaid") {
+      cards.forEach((card) => {
+        card.children[0].style.backgroundImage = 'linear-gradient(to bottom, lightcyan, pink, plum)'
+      })
+    } else if (theme === "wine") {
+        cards.forEach((card) => {
+          card.children[0].style.backgroundImage = 'linear-gradient(to bottom, rgb(154, 3, 38), rgb(95, 1, 23)'
+        })
+    } else {
+        cards.forEach((card) => {
+          card.children[0].style.backgroundImage = `url(img/cards/${theme}.jpg)`;
+        })
+    }
+  }
 
   const checkForMatch = () => {
     if (selectedCards.length !== 2) {

@@ -6,6 +6,12 @@
   margin: 10px;
 }
 
+#top-container {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  margin-bottom: 50px;
+}
+
 .card-container {
   position: relative;
   transition: transform 1s;
@@ -38,6 +44,8 @@
   border: 1px solid black;
   position: absolute;
   top: 0;
+  background-position-y: -5%;
+  background-size: cover;
 }
 
 .back {

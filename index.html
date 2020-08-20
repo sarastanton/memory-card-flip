@@ -9,8 +9,36 @@
   <body>
     <div id="container">
 
-      <div>
-        <h1> Score: <span id="score">0</span></h1>
+      <div id="top-container">
+        <div>
+          <h1> Score: <span id="score">0</span></h1>
+        </div>
+
+        <div>
+          <h3> Pick a card theme: </h3>
+          <form name="cardThemes">
+            <input type="radio" id="argyle" name="theme" value="argyle">
+            <label for="argyle">Argyle</label><br />
+            <input type="radio" id="blue-floral" name="theme" value="blue-floral">
+            <label for="blue-floral">Blue floral</label><br />
+            <input type="radio" id="checkerboard" name="theme" value="checkerboard">
+            <label for="checkerboard">Checkerboard</label><br />
+            <input type="radio" id="citrus" name="theme" value="citrus">
+            <label for="citrus">Citrus</label><br />
+            <input type="radio" id="mermaid" name="theme" value="mermaid" checked="checked">
+            <label for="mermaid">Mermaid gradient</label><br />
+            <input type="radio" id="paisley" name="theme" value="paisley">
+            <label for="paisley">Paisley</label><br />
+            <input type="radio" id="red-floral" name="theme" value="red-floral">
+            <label for="red-floral">Red floral</label><br />
+            <input type="radio" id="scales" name="theme" value="scales">
+            <label for="scales">Scales</label><br />
+            <input type="radio" id="starry-sky" name="theme" value="starry-sky">
+            <label for="starry-sky">Starry sky</label><br />
+            <input type="radio" id="wine" name="theme" value="wine">
+            <label for="wine">Wine gradient</label><br />
+          </form>
+        </div>
       </div>
 
       <div id="grid">
