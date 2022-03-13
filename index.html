@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Memory Cards</title>
+    <title>Memory Card Flip</title>
     <link rel="stylesheet" href="style.css"></link>
     <script src="app.js" charset="utf-8"></script>
   </head>
@@ -10,14 +10,14 @@
     <div id="container">
 
       <div id="top-container">
-        <div>
-          <h1> Score: <span id="score">0</span></h1>
+        <div id="score-container">
+          <h1> Turns: <span id="turns">0</span></h1>
         </div>
 
         <div>
           <h3> Pick a card theme: </h3>
           <form name="cardThemes">
-            <input type="radio" id="argyle" name="theme" value="argyle">
+            <input type="radio" id="argyle" name="theme" value="argyle" checked="checked">
             <label for="argyle">Argyle</label><br />
             <input type="radio" id="blue-floral" name="theme" value="blue-floral">
             <label for="blue-floral">Blue floral</label><br />
@@ -25,7 +25,7 @@
             <label for="checkerboard">Checkerboard</label><br />
             <input type="radio" id="citrus" name="theme" value="citrus">
             <label for="citrus">Citrus</label><br />
-            <input type="radio" id="mermaid" name="theme" value="mermaid" checked="checked">
+            <input type="radio" id="mermaid" name="theme" value="mermaid">
             <label for="mermaid">Mermaid gradient</label><br />
             <input type="radio" id="paisley" name="theme" value="paisley">
             <label for="paisley">Paisley</label><br />

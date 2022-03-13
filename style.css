@@ -6,9 +6,12 @@
   margin: 10px;
 }
 
+#score-container {
+  text-align: center;
+}
+
 #top-container {
-  /* display: flex; */
-  /* justify-content: space-between; */
+  padding-left: 20px;
   margin-bottom: 50px;
 }
 
@@ -40,7 +43,6 @@
 }
 
 .front {
-  background-image: linear-gradient(to bottom, lightcyan, pink, plum);
   border: 1px solid black;
   position: absolute;
   top: 0;

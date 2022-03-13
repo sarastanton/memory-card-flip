@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   let shuffledCards;
   let selectedCards = [];
-  let score = 0;
-  const scoreField = document.querySelector('#score');
+  let turns = 0;
+  const scoreField = document.querySelector('#turns');
   const cards = document.querySelectorAll('.card-container');
   const radios = document.getElementsByName('theme');
+  const defaultTheme = 'argyle';
   const covers = [
     "american_beauty_american_psycho.png", "american_beauty_american_psycho.png", "blink_182.jpg",
     "blink_182.jpg",
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       card.classList.toggle('is-flipped');
       selectedCards.push(card);
-      checkForMatch();
+      handleTurn();
     })
   });
 
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const checkForMatch = () => {
+  const handleTurn = () => {
     if (selectedCards.length !== 2) {
       return;
     }
@@ -90,11 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const handleMatch = () => {
-    score+= 10;
     setTimeout(() => {
       selectedCards.forEach((card) => card.style.visibility = "hidden");
       selectedCards = [];
-      scoreField.innerText = score;
+      turns+= 1;
+      scoreField.innerText = turns;
     }, 1500);
   };
 
@@ -103,11 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedCards = [];
       document.querySelectorAll('.is-flipped').forEach((card) => {
         card.classList.remove("is-flipped");
-      })
+      });
+      turns+= 1;
+      scoreField.innerText = turns;
     }, 1500);
   };
 
 
   shuffleCards(covers);
+  setCardTheme(defaultTheme);
 
 })
